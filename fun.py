@@ -1,4 +1,4 @@
-def dog_years():
+def dog_years(human_years):
     
     """
     Create a program that counts a dog's age in dog's years. The program should only calculate dog years until 20 human years.
@@ -11,7 +11,19 @@ def dog_years():
     ```
     """
 
-    #enter your code here
+    if human_years <= 2:
+        dog_years = human_years * 2
+    else:
+        dog_age = 21 + (human_years - 2) * 4
+        return dog_age
+    human_years = int(input("Enter dog's age in human years:"))
+    dog_age = dog_years(human_years)
+    print(f"The dog's age in dog's years is {dog_age}")
+
+     
+
+
+
 
 def fizzbuzz(num):
     """
@@ -24,7 +36,16 @@ def fizzbuzz(num):
     fizzbuzz(15) => "1 2 Fizz 4 Buzz Fizz 7 8 Fizz Buzz 11 Fizz 13 14 FizzBuzz"
     """
 
-    #enter your code here
+    if num%3 == 0 and num%5 == 0:
+        return "FizzBuzz"
+    elif num%5 == 0:
+        return "Buzz"
+    elif num%3 == 0:
+        return "Fizz"
+    else:
+        return str(num)
+    print(fizzbuzz(15))
+    
 
     
 
@@ -40,7 +61,15 @@ def word_lengths(sentence):
     ```
     """
     
-    #enter your code here
+    word = sentences.split()
+    word_lengths = {}
+    for word in words:
+        word_lengths[word] = len(word)
+    return word_lengths
+
+    sentences = int(input("Enter a sentence:"))
+    result - word_lengths(sentence)
+    print(result)
 
 def cube_sum(number):
     """
@@ -51,5 +80,14 @@ def cube_sum(number):
     cube_sum(123) => 1^3 + 2^3 + 3^3 = 1 + 8 + 27 = 36
     ```
     """
-    
-    #enter your code here
+      
+    cube_sum = 0
+    while number > 0:
+        digit = number % 10
+        cube_sum += digit **3
+        number //= 10
+    return cube_sum
+    number = int(input("Enter a number:"))
+    result = cube_sum(number)
+    print(f"The sum of cubes of each digits in a {number} is {result}")
+
